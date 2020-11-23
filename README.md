@@ -1,14 +1,14 @@
  Окно формы ввода пароля или регистрации нового пользователя.
  
+ 
  Если используем node js, то потребуется установить зависимость 
  "npm i @webcomponents/custom-elements"
  Если нет, то удаляем первую строку в index.ts "import ..." и подключаем на web странице 
- <script src="https://unpkg.com/@webcomponents/custom-elements"></script> 
- до загрузки нашего модуля.
+ <script src="https://unpkg.com/@webcomponents/custom-elements"></script> до загрузки нашего модуля.
  
- Транспилируйте через webpack index.ts в index.js
+ Транспилируйте через webpack index.ts в index.js "npm run build" - index.js будет доступен в папке ./dist
   
- 1. Подключите <script src="index.js"></script>
+ 1. Подключите на web странице скомпилированный файл <script src="index.js"></script>
  2. Скопируйте шрифты в папку ./fonts, что бы они были доступны на страние в браузере
  3. Создайте на странице элемент <login-register-window />
  4. Зарегистрируйте на него (или любой другой объект) слушателя 
@@ -19,13 +19,14 @@
 При нажатии кнопки Submit, данные с формы будут доступны в event.detail 
 при логине:
 { 
-	userName, // имя пользователя при входе
-	password, // пароль при входе
+	userName, // имя пользователя
+	password, // пароль
 	rememberMe,	// запоминать сессию - true/false
 }
 при создании нового пользователя:
 {
-	email, 		// почта при создании нового пользователя
-	newPassword,// пароль при создании нового пользователя
-	newPasswordConfirmation, // повтор пароля при создании нового пользователя
+	userName, 	// имя пользователя
+	email, 		// почта
+	newPassword,// пароль
+	newPasswordConfirmation, // повтор пароля
 }

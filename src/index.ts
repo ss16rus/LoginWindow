@@ -436,7 +436,8 @@ class MyElement extends HTMLElement {
         let login: HTMLDivElement;
         login = <HTMLDivElement>shadow.querySelector("#login")!;
 
-        shadow.querySelector(".to_subscribe")!.addEventListener('click', e => {
+        shadow.querySelector(".to_subscribe")!
+        .addEventListener('click', e => {
             e.stopPropagation();
             e.preventDefault();
             login.style.cssText = 'display:none;'
@@ -446,7 +447,8 @@ class MyElement extends HTMLElement {
                 animation-delay:.1s;`;
         });
         
-        shadow.querySelector(".to_login")!.addEventListener('click', e => {
+        shadow.querySelector(".to_login")!
+        .addEventListener('click', e => {
             e.stopPropagation();
             e.preventDefault();
             subscribe.style.cssText = 'display:none;'
